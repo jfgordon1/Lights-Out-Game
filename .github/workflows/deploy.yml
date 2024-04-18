@@ -59,8 +59,8 @@ jobs:
                   echo "</pre></body></html>" >> ./dist/tests.html
             - run: |
                   echo "<html><body><pre>" > ./dist/integrity.html
-                  for file in test/*; do md5sum $file; done >> ./dist/integrity.html
                   md5sum .eslintrc.js >> ./dist/integrity.html
+                  md5sum tsconfig.json >> ./dist/integrity.html
                   md5sum .github/workflows/deploy.yml >> ./dist/integrity.html
                   echo "</pre></body></html>" >> ./dist/integrity.html
             - run: echo "<html><head><meta http-equiv='refresh' content='0; URL=${{github.server_url}}/${{github.repository}}' /></head><body>Redirecting to repository</body></html>" > ./dist/github.html
