@@ -1,7 +1,7 @@
 .button-on {
     height: 50px;
     width: 50px;
-    color: red;
+    background-color: red;
     border: 10px;
     margin: 5px;
     position: center;
