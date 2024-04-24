@@ -4,6 +4,7 @@
     color: red;
     border: 10px;
     margin: 5px;
+    position: center;
 }
 
 .button-off {
@@ -12,4 +13,5 @@
     color: gray;
     border: 10px;
     margin: 5px;
+    position: center;
 }
