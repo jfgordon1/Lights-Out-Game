@@ -13,8 +13,16 @@ export class BoardButtonComponent extends EzComponent {
 
     @Click("button")
     onClick() {
-        //this.changeColor();
+        this.changeColor();
         EzDialog.popup(this, "Button Clicked!!");
         console.log("Button Clicked!!");
+    }
+
+    changeColor() {
+        if (this.backgroundColor === "red") {
+            this.backgroundColor = "gray";
+        } else {
+            this.backgroundColor = "red";
+        }
     }
 }
