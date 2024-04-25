@@ -5,9 +5,9 @@ Replace the empty whitespace with an `X` (e.g., `- [X]`, but do not include the 
 -   [x] NAME
 -   [x] GRID
 -   [ ] CLICKING
--   [ ] VICTORY
+-   [x] VICTORY
 -   [x] RESIZE
--   [ ] RESET
+-   [x] RESET
 -   [ ] VARIANTS
 -   [ ] TESTS
 
