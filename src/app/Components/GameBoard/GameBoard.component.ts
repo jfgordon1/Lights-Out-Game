@@ -1,4 +1,4 @@
-import { Click, EzComponent } from "@gsilber/webez";
+import { EzComponent } from "@gsilber/webez";
 import html from "./GameBoard.component.html";
 import css from "./GameBoard.component.css";
 import { BoardButtonRowComponent } from "../boardButtonRow/boardButtonRow.component";
@@ -7,24 +7,29 @@ import { BoardButtonRowComponent } from "../boardButtonRow/boardButtonRow.compon
 export class GameBoardComponent extends EzComponent {
     private rows: BoardButtonRowComponent[] = [];
 
-    length = 3;
-
     constructor() {
         super(html, css);
     }
 
-    @Click("makeBoard")
-    onMakeBoard() {
+    onMakeBoard(length: number) {
         if (this.rows.length > 0) {
             for (let row of this.rows) {
                 this.removeComponent(row);
             }
         }
         this.rows = [];
-        for (let i = 0; i < this.length; i++) {
+        for (let i = 0; i < length; i++) {
             const row = new BoardButtonRowComponent();
             this.addComponent(row);
             this.rows.push(row);
         }
     }
+
+    /*checkWin(){
+        let win: boolean = true;
+        for(let i = 0; i< length; i++){
+
+        }
+
+    }*/
 }
