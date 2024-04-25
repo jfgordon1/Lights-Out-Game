@@ -37,7 +37,6 @@ export class MainComponent extends EzComponent {
     @Click("gameboard")
     onCLick() {
         this.clicks++;
-        //EzDialog.popup(this, this.clicks.toString());
         if (this.board.checkWin(this.length)) {
             EzDialog.popup(
                 this,
