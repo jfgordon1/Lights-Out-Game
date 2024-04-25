@@ -7,7 +7,7 @@ import { BoardButtonRowComponent } from "../boardButtonRow/boardButtonRow.compon
 export class GameBoardComponent extends EzComponent {
     private rows: BoardButtonRowComponent[] = [];
 
-    length = 5;
+    length = 3;
 
     constructor() {
         super(html, css);

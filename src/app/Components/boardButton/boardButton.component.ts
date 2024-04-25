@@ -1,4 +1,4 @@
-import { BindStyle, Click, EzComponent, EzDialog } from "@gsilber/webez";
+import { BindStyle, Click, EzComponent } from "@gsilber/webez";
 import html from "./boardButton.component.html";
 import css from "./boardButton.component.css";
 
@@ -14,7 +14,6 @@ export class BoardButtonComponent extends EzComponent {
     @Click("button")
     onClick() {
         this.changeColor();
-        EzDialog.popup(this, "Button Clicked!!");
         console.log("Button Clicked!!");
     }
 
