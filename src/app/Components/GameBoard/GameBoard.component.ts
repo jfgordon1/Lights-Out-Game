@@ -11,7 +11,7 @@ export class GameBoardComponent extends EzComponent {
         super(html, css);
     }
 
-    onMakeBoard(length: number) {
+    onMakeBoard(length: number, width: number) {
         if (this.rows.length > 0) {
             for (let row of this.rows) {
                 this.removeComponent(row);
@@ -19,7 +19,7 @@ export class GameBoardComponent extends EzComponent {
         }
         this.rows = [];
         for (let i = 0; i < length; i++) {
-            const row = new BoardButtonRowComponent();
+            const row = new BoardButtonRowComponent(width);
             this.addComponent(row);
             this.rows.push(row);
         }

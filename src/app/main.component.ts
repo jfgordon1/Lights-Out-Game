@@ -1,9 +1,7 @@
 import html from "./main.component.html";
 import css from "./main.component.css";
 import {
-    BindValue,
     BindValueToNumber,
-    Change,
     Click,
     EzComponent,
     EzDialog,
@@ -24,6 +22,9 @@ export class MainComponent extends EzComponent {
     @BindValueToNumber("length")
     private length: number = 3;
 
+    @BindValueToNumber("width")
+    private width: number = 3;
+
     constructor() {
         super(html, css);
         this.addComponent(this.board, "gameboard");
@@ -31,7 +32,7 @@ export class MainComponent extends EzComponent {
 
     @Click("makeBoard")
     makeBoard() {
-        this.board.onMakeBoard(this.length);
+        this.board.onMakeBoard(this.length, this.width);
     }
     @Click("gameboard")
     onCLick() {
@@ -49,5 +50,10 @@ export class MainComponent extends EzComponent {
     @Input("length")
     lengthChange(e: ValueEvent) {
         this.length = Number(e.value);
+    }
+
+    @Input("width")
+    widthChange(e: ValueEvent) {
+        this.width = Number(e.value);
     }
 }

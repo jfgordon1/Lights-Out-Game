@@ -5,10 +5,9 @@ import { BoardButtonComponent } from "../boardButton/boardButton.component";
 
 export class BoardButtonRowComponent extends EzComponent {
     row: BoardButtonComponent[] = [];
-    length: number = 3;
-    constructor() {
+    constructor(width: number) {
         super(html, css);
-        for (let i = 0; i < this.length; i++) {
+        for (let i = 0; i < width; i++) {
             const temp = new BoardButtonComponent();
             this.addComponent(temp, "buttons");
             this.row.push(temp);
