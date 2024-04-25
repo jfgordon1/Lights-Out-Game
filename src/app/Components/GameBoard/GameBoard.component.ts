@@ -25,11 +25,13 @@ export class GameBoardComponent extends EzComponent {
         }
     }
 
-    /*checkWin(){
+    checkWin(length: number) {
         let win: boolean = true;
-        for(let i = 0; i< length; i++){
-
+        for (let i = 0; i < length; i++) {
+            if (!this.rows[i].checkOff()) {
+                win = false;
+            }
         }
-
-    }*/
+        return win;
+    }
 }
