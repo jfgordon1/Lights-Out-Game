@@ -6,7 +6,7 @@ Replace the empty whitespace with an `X` (e.g., `- [X]`, but do not include the 
 -   [x] GRID
 -   [ ] CLICKING
 -   [ ] VICTORY
--   [ ] RESIZE
+-   [x] RESIZE
 -   [ ] RESET
 -   [ ] VARIANTS
 -   [ ] TESTS
