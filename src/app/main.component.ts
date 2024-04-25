@@ -43,7 +43,9 @@ export class MainComponent extends EzComponent {
                 "Clicks:" + this.clicks.toString(),
                 "You Win!!",
                 ["play again?"],
-            );
+            ).subscribe(() => {
+                this.makeBoard();
+            });
             this.clicks = 0;
         }
     }
