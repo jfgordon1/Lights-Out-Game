@@ -42,7 +42,9 @@ export class MainComponent extends EzComponent {
                 this,
                 "Clicks:" + this.clicks.toString(),
                 "You Win!!",
+                ["play again?"],
             );
+            this.clicks = 0;
         }
     }
 
