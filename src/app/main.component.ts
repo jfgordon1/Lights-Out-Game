@@ -40,8 +40,8 @@ export class MainComponent extends EzComponent {
         if (this.board.checkWin(this.length)) {
             EzDialog.popup(
                 this,
+                "Clicks:" + this.clicks.toString(),
                 "You Win!!",
-                "clicks:" + this.clicks.toString(),
             );
         }
     }
