@@ -2,6 +2,5 @@
     display: inline-grid;
     grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
     border: 10px solid black;
-    margin: 10px;
     position: center;
 }
