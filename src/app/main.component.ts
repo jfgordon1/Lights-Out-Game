@@ -32,6 +32,7 @@ export class MainComponent extends EzComponent {
 
     @Click("makeBoard")
     makeBoard() {
+        this.clicks = 0;
         this.board.onMakeBoard(this.length, this.width);
     }
     @Click("gameboard")
