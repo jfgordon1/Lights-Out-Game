@@ -13,4 +13,17 @@ describe("BoardButtonComponent", () => {
             expect(component).toBeInstanceOf(BoardButtonComponent);
         });
     });
+    describe("Checks Color", () => {
+        test("Color Check: Red", () => {
+            const button = new BoardButtonComponent();
+            expect(button.backgroundColor).toEqual(button.checkColor());
+        });
+    });
+    describe("Changes Color", () => {
+        test("red to grey", () => {
+            const button = new BoardButtonComponent();
+            button.changeColor();
+            expect(button.backgroundColor).toEqual(button.checkColor());
+        });
+    });
 });
