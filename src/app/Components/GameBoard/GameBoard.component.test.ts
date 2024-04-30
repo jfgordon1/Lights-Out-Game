@@ -21,4 +21,8 @@ describe("GameBoardComponent", () => {
             //expect(board).toBeInstanceOf();
         });
     });
+    describe("Checks Wins", () => {
+        test("Win: True", () => {});
+        test("Win: False", () => {});
+    });
 });
