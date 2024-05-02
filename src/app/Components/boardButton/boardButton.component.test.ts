@@ -15,13 +15,13 @@ describe("BoardButtonComponent", () => {
     });
     describe("Checks Color", () => {
         test("Color Check: Red", () => {
-            const button = new BoardButtonComponent();
+            const button = new BoardButtonComponent(0);
             expect(button.backgroundColor).toEqual(button.checkColor());
         });
     });
     describe("Changes Color", () => {
         test("red to grey", () => {
-            const button = new BoardButtonComponent();
+            const button = new BoardButtonComponent(0);
             button.changeColor();
             expect(button.backgroundColor).toEqual(button.checkColor());
         });

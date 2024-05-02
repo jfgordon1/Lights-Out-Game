@@ -18,7 +18,8 @@ describe("BoardButtonRowComponent", () => {
     });
     describe("Check Row Colors", () => {
         test("all off", () => {
-            const row = new BoardButtonRowComponent(3);
+            let id = 0;
+            const row = new BoardButtonRowComponent(3, id);
             for (let i = 0; i < 3; i++) {
                 if (row.row[i].checkColor()) {
                     row.row[i].changeColor();
@@ -27,7 +28,8 @@ describe("BoardButtonRowComponent", () => {
             expect(row.checkOff).toBeTruthy();
         });
         test("all on", () => {
-            const row = new BoardButtonRowComponent(3);
+            let id = 0;
+            const row = new BoardButtonRowComponent(3, id);
             for (let i = 0; i < 3; i++) {
                 if (row.row[i].checkColor() === "gray") {
                     row.row[i].changeColor();

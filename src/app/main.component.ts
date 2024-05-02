@@ -1,6 +1,7 @@
 import html from "./main.component.html";
 import css from "./main.component.css";
 import {
+    BindValue,
     BindValueToNumber,
     Click,
     EzComponent,
@@ -24,6 +25,9 @@ export class MainComponent extends EzComponent {
 
     @BindValueToNumber("width")
     private width: number = 3;
+
+    @BindValue("modes")
+    private mode = "";
 
     constructor() {
         super(html, css);
@@ -59,5 +63,10 @@ export class MainComponent extends EzComponent {
     @Input("width")
     widthChange(e: ValueEvent) {
         this.width = Number(e.value);
+    }
+
+    @Input("mode")
+    modeChange(e: ValueEvent) {
+        this.mode = e.value;
     }
 }
