@@ -13,7 +13,7 @@ export class GameBoardComponent extends EzComponent {
         super(html, css);
     }
 
-    onMakeBoard(length: number, width: number) {
+    onMakeBoard(length: number, width: number, type: string) {
         let id = 0;
 
         if (this.rows.length > 0) {
@@ -24,12 +24,12 @@ export class GameBoardComponent extends EzComponent {
         this.rows = [];
         for (let i = 0; i < length; i++) {
             const row = new BoardButtonRowComponent(width, id);
-            /*if(type === "Cadinal Directions"){
-                row.clickCheck.subsribe((id: number) => {
-                    cardinalDirectionCheck(id);
+            if (type === "Cadinal Directions") {
+                row.clickCheck.subscribe((id: number) => {
+                    this.cardinalDirectionCheck(id);
                 });
             }
-            else if (type === "Left and Right"){
+            /*else if (type === "Left and Right"){
                 row.clickCheck.subscribe((id: number) => {
                     leftRightCheck(id);
                 });
