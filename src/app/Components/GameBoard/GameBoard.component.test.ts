@@ -17,7 +17,7 @@ describe("GameBoardComponent", () => {
     describe("Makes Board", () => {
         test("3x3 board", () => {
             const board = new GameBoardComponent();
-            board.onMakeBoard(3, 3, "");
+            board.onMakeBoard(3, 3);
             //expect(board).toBeInstanceOf();
         });
     });

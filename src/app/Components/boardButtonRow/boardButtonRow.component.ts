@@ -14,6 +14,7 @@ export class BoardButtonRowComponent extends EzComponent {
         for (let i = 0; i < width; i++) {
             let button = new BoardButtonComponent(tempId);
             button.clickEvent.subscribe((id: number) => {
+                console.log("Row event:" + id);
                 this.clickCheck.next(id);
             });
             this.addComponent(button, "buttons");
@@ -39,6 +40,14 @@ export class BoardButtonRowComponent extends EzComponent {
             }
             if (this.row[i].getId() === id && this.row[i].getId()) {
                 this.row[i + 1].changeColor();
+            }
+        }
+    }
+
+    getButton(index: number) {
+        for (let i = 0; i < this.row.length; i++) {
+            if (i === index) {
+                return this.row[i];
             }
         }
     }

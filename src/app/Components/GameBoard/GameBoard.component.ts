@@ -13,7 +13,7 @@ export class GameBoardComponent extends EzComponent {
         super(html, css);
     }
 
-    onMakeBoard(length: number, width: number, type: string) {
+    onMakeBoard(length: number, width: number) {
         let id = 0;
 
         if (this.rows.length > 0) {
@@ -24,11 +24,12 @@ export class GameBoardComponent extends EzComponent {
         this.rows = [];
         for (let i = 0; i < length; i++) {
             const row = new BoardButtonRowComponent(width, id);
-            if (type === "Cadinal Directions") {
-                row.clickCheck.subscribe((id: number) => {
-                    this.cardinalDirectionCheck(id);
-                });
-            }
+            //if (type === "Cardinal Directions") {
+            row.clickCheck.subscribe((id: number) => {
+                console.log("boardEvent: " + id);
+                this.cardinalDirectionCheck(id);
+            });
+            //}
             /*else if (type === "Left and Right"){
                 row.clickCheck.subscribe((id: number) => {
                     leftRightCheck(id);
@@ -84,15 +85,24 @@ export class GameBoardComponent extends EzComponent {
                         this.rows[i].row[z].getId() ===
                         this.rows[i].row[0].getId()
                     ) {
-                        this.rows[i].row[z + 1].changeColor();
-                    } else if (
-                        this.rows[i].row[z].getId() ===
-                        this.rows[i].row[this.rows[i].row.length].getId()
-                    ) {
-                        this.rows[i].row[z - 1].changeColor();
-                    } else {
-                        this.rows[i].row[z - 1].changeColor();
-                        this.rows[i].row[z + 1].changeColor();
+                        console.log(
+                            "Id from variables: " + this.rows[i].row[z].getId(),
+                        );
+                        console.log(
+                            "static position: " + this.rows[i].row[0].getId(),
+                        );
+                        //left side
+                        if (i === 0) {
+                            this.rows[i].row[z + 1].changeColor();
+                            this.rows[i + 1].row[z].changeColor();
+                        } else if (i === this.rows.length - 1) {
+                            this.rows[i].row[z + 1].changeColor();
+                            this.rows[i - 1].row[z].changeColor();
+                        } else {
+                            this.rows[i].row[z + 1].changeColor();
+                            this.rows[i + 1].row[z].changeColor();
+                            this.rows[i - 1].row[z].changeColor();
+                        }
                     }
                 }
             }

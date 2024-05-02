@@ -52,7 +52,7 @@ export class BoardButtonComponent extends EzComponent {
         return color;
     }
 
-    getId() {
+    getId(): number {
         return this.id;
     }
 }
