@@ -117,10 +117,20 @@ export class GameBoardComponent extends EzComponent {
                     }
                     //middle sections
                     else {
-                        this.rows[i].row[z - 1].changeColor();
-                        this.rows[i].row[z + 1].changeColor();
-                        this.rows[i + 1].row[z].changeColor();
-                        this.rows[i - 1].row[z].changeColor();
+                        if (i === 0) {
+                            this.rows[i].row[z - 1].changeColor();
+                            this.rows[i].row[z + 1].changeColor();
+                            this.rows[i + 1].row[z].changeColor();
+                        } else if (i === this.rows.length - 1) {
+                            this.rows[i].row[z - 1].changeColor();
+                            this.rows[i].row[z + 1].changeColor();
+                            this.rows[i - 1].row[z].changeColor();
+                        } else {
+                            this.rows[i].row[z - 1].changeColor();
+                            this.rows[i].row[z + 1].changeColor();
+                            this.rows[i + 1].row[z].changeColor();
+                            this.rows[i - 1].row[z].changeColor();
+                        }
                     }
                 }
             }
