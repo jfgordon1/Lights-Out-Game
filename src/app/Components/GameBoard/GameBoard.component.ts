@@ -25,12 +25,12 @@ export class GameBoardComponent extends EzComponent {
         for (let i = 0; i < length; i++) {
             const row = new BoardButtonRowComponent(width, id);
             /*if(type === "Cadinal Directions"){
-                row.clickCheck.subsribe(() => {
+                row.clickCheck.subsribe((id: number) => {
                     cardinalDirectionCheck(id);
                 });
             }
             else if (type === "Left and Right"){
-                row.clickCheck.subscribe(() => {
+                row.clickCheck.subscribe((id: number) => {
                     leftRightCheck(id);
                 });
             }*/
