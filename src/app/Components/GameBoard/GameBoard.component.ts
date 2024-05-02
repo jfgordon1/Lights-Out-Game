@@ -81,17 +81,11 @@ export class GameBoardComponent extends EzComponent {
         for (let i = 0; i < this.rows.length; i++) {
             for (let z = 0; z < this.rows[i].row.length; z++) {
                 if (this.rows[i].row[z].getId() === id) {
+                    //left wall
                     if (
                         this.rows[i].row[z].getId() ===
                         this.rows[i].row[0].getId()
                     ) {
-                        console.log(
-                            "Id from variables: " + this.rows[i].row[z].getId(),
-                        );
-                        console.log(
-                            "static position: " + this.rows[i].row[0].getId(),
-                        );
-                        //left side
                         if (i === 0) {
                             this.rows[i].row[z + 1].changeColor();
                             this.rows[i + 1].row[z].changeColor();
@@ -103,6 +97,30 @@ export class GameBoardComponent extends EzComponent {
                             this.rows[i + 1].row[z].changeColor();
                             this.rows[i - 1].row[z].changeColor();
                         }
+                    }
+                    //right wall
+                    else if (
+                        this.rows[i].row[z].getId() ===
+                        this.rows[i].row[this.rows[i].row.length - 1].getId()
+                    ) {
+                        if (i === 0) {
+                            this.rows[i].row[z - 1].changeColor();
+                            this.rows[i + 1].row[z].changeColor();
+                        } else if (i === this.rows.length - 1) {
+                            this.rows[i].row[z - 1].changeColor();
+                            this.rows[i - 1].row[z].changeColor();
+                        } else {
+                            this.rows[i].row[z - 1].changeColor();
+                            this.rows[i + 1].row[z].changeColor();
+                            this.rows[i - 1].row[z].changeColor();
+                        }
+                    }
+                    //middle sections
+                    else {
+                        this.rows[i].row[z - 1].changeColor();
+                        this.rows[i].row[z + 1].changeColor();
+                        this.rows[i + 1].row[z].changeColor();
+                        this.rows[i - 1].row[z].changeColor();
                     }
                 }
             }
