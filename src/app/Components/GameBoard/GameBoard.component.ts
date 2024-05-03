@@ -39,31 +39,6 @@ export class GameBoardComponent extends EzComponent {
             this.addComponent(row);
             this.rows.push(row);
         }
-        /*
-        if (this.board.length > 0) {
-            for (let i = 0; i < length; i++) {
-                for (let z = 0; z < width; i++) {
-                    this.removeComponent(this.board[i][z]);
-                }
-            }
-            this.board = [];
-        }
-        for (let i = 0; i < length; i++) {
-            const tempRow = [];
-            for (let z = 0; z < width; z++) {
-                const tempButton = new BoardButtonComponent(id);
-                id++;
-                /*if(type === "Cardinal Directions")
-                tempButton.clickEvent.subscribe(() => {
-                    cardinalDirectionCheck
-                });
-                this.addComponent(tempButton, "board-layout");
-                tempRow.push(tempButton);
-            }
-            this.board.push(tempRow);
-            
-        }
-        */
     }
 
     checkWin(length: number) {
@@ -102,13 +77,16 @@ export class GameBoardComponent extends EzComponent {
                         this.rows[i].row[z].getId() ===
                         this.rows[i].row[this.rows[i].row.length - 1].getId()
                     ) {
+                        //Top Row
                         if (i === 0) {
                             this.rows[i].row[z - 1].changeColor();
                             this.rows[i + 1].row[z].changeColor();
+                            //Bottow Row
                         } else if (i === this.rows.length - 1) {
                             this.rows[i].row[z - 1].changeColor();
                             this.rows[i - 1].row[z].changeColor();
                         } else {
+                            //Middle Rows
                             this.rows[i].row[z - 1].changeColor();
                             this.rows[i + 1].row[z].changeColor();
                             this.rows[i - 1].row[z].changeColor();
@@ -117,14 +95,17 @@ export class GameBoardComponent extends EzComponent {
                     //middle sections
                     else {
                         if (i === 0) {
+                            //Top Row
                             this.rows[i].row[z - 1].changeColor();
                             this.rows[i].row[z + 1].changeColor();
                             this.rows[i + 1].row[z].changeColor();
                         } else if (i === this.rows.length - 1) {
+                            //Bottom Row
                             this.rows[i].row[z - 1].changeColor();
                             this.rows[i].row[z + 1].changeColor();
                             this.rows[i - 1].row[z].changeColor();
                         } else {
+                            //Middle Rows
                             this.rows[i].row[z - 1].changeColor();
                             this.rows[i].row[z + 1].changeColor();
                             this.rows[i + 1].row[z].changeColor();
@@ -146,25 +127,11 @@ export class GameBoardComponent extends EzComponent {
                         this.rows[i].row[0].getId()
                     ) {
                         this.rows[i].row[z + 1].changeColor();
-                        //if (i === 0) {
-                        //this.rows[i].row[z + 1].changeColor();
-                        //} else if (i === this.rows.length - 1) {
-                        //this.rows[i].row[z + 1].changeColor();
-                        //} else {
-                        //this.rows[i].row[z + 1].changeColor();
-                        //}
                     } else if (
                         this.rows[i].row[z].getId() ===
                         this.rows[i].row[this.rows[i].row.length - 1].getId()
                     ) {
                         this.rows[i].row[z - 1].changeColor();
-                        //if (i === 0) {
-                        //this.rows[i].row[z - 1].changeColor();
-                        //} else if (i === this.rows.length - 1) {
-                        //this.rows[i].row[z - 1].changeColor();
-                        //} else {
-                        //this.rows[i].row[z - 1].changeColor();
-                        //}
                     } else {
                         this.rows[i].row[z - 1].changeColor();
                         this.rows[i].row[z + 1].changeColor();
