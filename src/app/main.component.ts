@@ -3,6 +3,7 @@ import css from "./main.component.css";
 import {
     BindValue,
     BindValueToNumber,
+    Change,
     Click,
     EzComponent,
     EzDialog,
@@ -27,7 +28,7 @@ export class MainComponent extends EzComponent {
     private width: number = 3;
 
     @BindValue("modes")
-    private mode = "";
+    private mode = "Cardinal Directions";
 
     constructor() {
         super(html, css);
@@ -37,7 +38,7 @@ export class MainComponent extends EzComponent {
     @Click("makeBoard")
     makeBoard() {
         this.clicks = 0;
-        this.board.onMakeBoard(this.length, this.width);
+        this.board.onMakeBoard(this.length, this.width, this.mode);
     }
     @Click("gameboard")
     onCLick() {
@@ -65,7 +66,7 @@ export class MainComponent extends EzComponent {
         this.width = Number(e.value);
     }
 
-    @Input("mode")
+    @Change("modes")
     modeChange(e: ValueEvent) {
         this.mode = e.value;
     }
