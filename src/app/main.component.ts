@@ -44,7 +44,7 @@ export class MainComponent extends EzComponent {
                 this,
                 "The aim of this game is to get all the squares in the grid gray.\n The squares that you click will also affect the other based on what game mode you have selected.\n Have Fun!!!",
                 "Welcome",
-                ["okay"],
+                ["Play Game"],
             );
             this.firstTime = false;
         }
