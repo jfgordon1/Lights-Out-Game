@@ -20,6 +20,7 @@ import { GameBoardComponent } from "./Components/GameBoard/GameBoard.component";
 export class MainComponent extends EzComponent {
     private clicks: number = 0;
     private board = new GameBoardComponent();
+    private firstTime: boolean = true;
 
     @BindValueToNumber("length")
     private length: number = 3;
@@ -38,6 +39,15 @@ export class MainComponent extends EzComponent {
     @Click("makeBoard")
     makeBoard() {
         this.clicks = 0;
+        if (this.firstTime) {
+            EzDialog.popup(
+                this,
+                "The aim of this game is to get all the squares in the grid gray.\n The squares that you click will also affect the other based on what game mode you have selected.\n Have Fun!!!",
+                "Welcome",
+                ["okay"],
+            );
+            this.firstTime = false;
+        }
         this.board.onMakeBoard(this.length, this.width, this.mode);
     }
     @Click("gameboard")
