@@ -162,6 +162,11 @@ export class GameBoardComponent extends EzComponent {
         }
     }
 
+    /**
+     * @description method that the board is subscribed to affect the other buttons on click
+     * @click affects the adjecent box in the diagonal directions
+     * @param id
+     */
     diagonalCheck(id: number) {
         for (let i = 0; i < this.rows.length; i++) {
             for (let z = 0; z < this.rows[i].row.length; z++) {
