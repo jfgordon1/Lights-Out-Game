@@ -38,6 +38,10 @@ export class GameBoardComponent extends EzComponent {
                 row.clickCheck.subscribe((id: number) => {
                     this.leftRightCheck(id);
                 });
+            } else if (type === "Diagonal") {
+                row.clickCheck.subscribe((id: number) => {
+                    this.diagonalCheck(id);
+                });
             }
             row.clickCheck.subscribe(() => {});
             id += width;
@@ -152,6 +156,64 @@ export class GameBoardComponent extends EzComponent {
                     } else {
                         this.rows[i].row[z - 1].changeColor();
                         this.rows[i].row[z + 1].changeColor();
+                    }
+                }
+            }
+        }
+    }
+
+    diagonalCheck(id: number) {
+        for (let i = 0; i < this.rows.length; i++) {
+            for (let z = 0; z < this.rows[i].row.length; z++) {
+                if (this.rows[i].row[z].getId() === id) {
+                    //left wall
+                    if (
+                        this.rows[i].row[z].getId() ===
+                        this.rows[i].row[0].getId()
+                    ) {
+                        if (i === 0) {
+                            this.rows[i + 1].row[z + 1].changeColor();
+                        } else if (i === this.rows.length - 1) {
+                            this.rows[i - 1].row[z - 1].changeColor();
+                        } else {
+                            this.rows[i + 1].row[z + 1].changeColor();
+                            this.rows[i - 1].row[z + 1].changeColor();
+                        }
+                    }
+                    //right wall
+                    else if (
+                        this.rows[i].row[z].getId() ===
+                        this.rows[i].row[this.rows[i].row.length - 1].getId()
+                    ) {
+                        //Top Row
+                        if (i === 0) {
+                            this.rows[i + 1].row[z - 1].changeColor();
+                            //Bottow Row
+                        } else if (i === this.rows.length - 1) {
+                            this.rows[i - 1].row[z - 1].changeColor();
+                        } else {
+                            //Middle Rows
+                            this.rows[i - 1].row[z - 1].changeColor();
+                            this.rows[i + 1].row[z - 1].changeColor();
+                        }
+                    }
+                    //middle sections
+                    else {
+                        if (i === 0) {
+                            //Top Row
+                            this.rows[i + 1].row[z - 1].changeColor();
+                            this.rows[i + 1].row[z + 1].changeColor();
+                        } else if (i === this.rows.length - 1) {
+                            //Bottom Row
+                            this.rows[i - 1].row[z - 1].changeColor();
+                            this.rows[i - 1].row[z + 1].changeColor();
+                        } else {
+                            //Middle Rows
+                            this.rows[i + 1].row[z + 1].changeColor();
+                            this.rows[i - 1].row[z + 1].changeColor();
+                            this.rows[i + 1].row[z - 1].changeColor();
+                            this.rows[i - 1].row[z - 1].changeColor();
+                        }
                     }
                 }
             }
