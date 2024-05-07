@@ -12,7 +12,13 @@ export class GameBoardComponent extends EzComponent {
     constructor() {
         super(html, css);
     }
-
+    /**
+     * onMakeBoard takes @param length, @param width, and @param type to create
+     * the game board with those specifications
+     * @param length
+     * @param width
+     * @param type
+     */
     onMakeBoard(length: number, width: number, type: string) {
         let id = 0;
 
@@ -40,8 +46,12 @@ export class GameBoardComponent extends EzComponent {
             this.rows.push(row);
         }
     }
-
-    checkWin(length: number) {
+    /**
+     * Runs through the board to check the board states of all the buttons.
+     * @param length
+     * @returns boolean describing board state
+     */
+    checkWin(length: number): boolean {
         let win: boolean = true;
         for (let i = 0; i < length; i++) {
             if (!this.rows[i].checkOff()) {
@@ -50,7 +60,10 @@ export class GameBoardComponent extends EzComponent {
         }
         return win;
     }
-
+    /**
+     * method that the board is subscribed to affect the other buttons on click
+     * @param id
+     */
     cardinalDirectionCheck(id: number) {
         for (let i = 0; i < this.rows.length; i++) {
             for (let z = 0; z < this.rows[i].row.length; z++) {
@@ -116,7 +129,10 @@ export class GameBoardComponent extends EzComponent {
             }
         }
     }
-
+    /**
+     * method that the board is subscribed to affect the other buttons on click
+     * @param id
+     */
     leftRightCheck(id: number) {
         for (let i = 0; i < this.rows.length; i++) {
             for (let z = 0; z < this.rows[i].row.length; z++) {
