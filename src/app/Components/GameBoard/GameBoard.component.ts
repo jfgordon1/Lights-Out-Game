@@ -3,7 +3,6 @@ import html from "./GameBoard.component.html";
 import css from "./GameBoard.component.css";
 import { BoardButtonRowComponent } from "../boardButtonRow/boardButtonRow.component";
 import { BoardButtonComponent } from "../boardButton/boardButton.component";
-//import { BoardButtonComponent } from "../boardButton/boardButton.component";
 
 export class GameBoardComponent extends EzComponent {
     private rows: BoardButtonRowComponent[] = [];
@@ -62,6 +61,7 @@ export class GameBoardComponent extends EzComponent {
     }
     /**
      * method that the board is subscribed to affect the other buttons on click
+     * @click affects the boxes in the cardinal directions
      * @param id
      */
     cardinalDirectionCheck(id: number) {
@@ -131,6 +131,7 @@ export class GameBoardComponent extends EzComponent {
     }
     /**
      * method that the board is subscribed to affect the other buttons on click
+     * @click affects the immediate left and right boxes
      * @param id
      */
     leftRightCheck(id: number) {
