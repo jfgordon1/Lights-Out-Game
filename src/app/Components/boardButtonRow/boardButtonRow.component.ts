@@ -24,6 +24,11 @@ export class BoardButtonRowComponent extends EzComponent {
         this.width = width;
     }
 
+    /**
+     * iterates through the array and checks the board states of
+     * each button to see if all of the buttons are off.
+     * @returns true or false
+     */
     checkOff(): boolean {
         for (let i = 0; i < this.width; i++) {
             if (this.row[i].checkColor() === "red") {
@@ -32,18 +37,11 @@ export class BoardButtonRowComponent extends EzComponent {
         }
         return true;
     }
-
-    leftRightClickEvent(id: number) {
-        for (let i = 0; i < this.row.length; i++) {
-            if (this.row[i].getId() === id && this.row[i].getId()) {
-                this.row[i - 1].changeColor();
-            }
-            if (this.row[i].getId() === id && this.row[i].getId()) {
-                this.row[i + 1].changeColor();
-            }
-        }
-    }
-
+    /**
+     * returns the button at the specified index.
+     * @param index
+     * @returns the button at index
+     */
     getButton(index: number) {
         for (let i = 0; i < this.row.length; i++) {
             if (i === index) {
