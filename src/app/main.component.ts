@@ -36,6 +36,11 @@ export class MainComponent extends EzComponent {
         this.addComponent(this.board, "gameboard");
     }
 
+    /**
+     * @click
+     * @description Displays the instructions if this is the first time,
+     * then creates the board
+     */
     @Click("makeBoard")
     makeBoard() {
         this.clicks = 0;
@@ -50,6 +55,11 @@ export class MainComponent extends EzComponent {
         }
         this.board.onMakeBoard(this.length, this.width, this.mode);
     }
+    /**
+     * @click
+     * @description increases the number of clicks used to solve board by 1
+     * as well as checking the board states of all buttons to check for victory
+     */
     @Click("gameboard")
     onCLick() {
         this.clicks++;
@@ -66,16 +76,28 @@ export class MainComponent extends EzComponent {
         }
     }
 
+    /**
+     * @description Binds the value from the length scroll bar to the length member variable
+     * @param e : ValueEvent
+     */
     @Input("length")
     lengthChange(e: ValueEvent) {
         this.length = Number(e.value);
     }
 
+    /**
+     * @description Binds the value from the length scroll bar to the width member variable
+     * @param e : ValueEvent
+     */
     @Input("width")
     widthChange(e: ValueEvent) {
         this.width = Number(e.value);
     }
 
+    /**
+     * @description Binds the value from the mode dropdown box to the mode member variable
+     * @param e : ValueEvent
+     */
     @Change("modes")
     modeChange(e: ValueEvent) {
         this.mode = e.value;

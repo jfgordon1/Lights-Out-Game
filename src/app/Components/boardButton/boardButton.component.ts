@@ -30,7 +30,7 @@ export class BoardButtonComponent extends EzComponent {
         this.id = id;
     }
     /**
-     * changes the color of the button that was clicked
+     * @description changes the color of the button that was clicked
      * and passes the id of the button to any object subscribed to
      * the clickEvent EventSubject
      */
@@ -41,7 +41,7 @@ export class BoardButtonComponent extends EzComponent {
         this.clickEvent.next(this.id);
     }
     /**
-     * Changes the color of the box and changes button's board state
+     * @description Changes the color of the box and changes button's board state
      */
     changeColor() {
         if (this.backgroundColor === "red") {
@@ -53,7 +53,7 @@ export class BoardButtonComponent extends EzComponent {
         }
     }
     /**
-     * Checks the color of the box by returning the backgroundColor member variable
+     * @description Checks the color of the box by returning the backgroundColor member variable
      * @returns color
      */
     checkColor(): string {
@@ -61,7 +61,7 @@ export class BoardButtonComponent extends EzComponent {
         return color;
     }
     /**
-     * returns the id of the button
+     * @description returns the id of the button
      * @returns this.id
      */
     getId(): number {

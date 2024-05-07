@@ -12,7 +12,7 @@ export class GameBoardComponent extends EzComponent {
         super(html, css);
     }
     /**
-     * onMakeBoard takes @param length, @param width, and @param type to create
+     * @description onMakeBoard takes @param length, @param width, and @param type to create
      * the game board with those specifications
      * @param length
      * @param width
@@ -46,7 +46,7 @@ export class GameBoardComponent extends EzComponent {
         }
     }
     /**
-     * Runs through the board to check the board states of all the buttons.
+     * @description Runs through the board to check the board states of all the buttons.
      * @param length
      * @returns boolean describing board state
      */
@@ -60,7 +60,7 @@ export class GameBoardComponent extends EzComponent {
         return win;
     }
     /**
-     * method that the board is subscribed to affect the other buttons on click
+     * @description method that the board is subscribed to affect the other buttons on click
      * @click affects the boxes in the cardinal directions
      * @param id
      */
@@ -130,7 +130,7 @@ export class GameBoardComponent extends EzComponent {
         }
     }
     /**
-     * method that the board is subscribed to affect the other buttons on click
+     * @description method that the board is subscribed to affect the other buttons on click
      * @click affects the immediate left and right boxes
      * @param id
      */

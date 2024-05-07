@@ -25,7 +25,7 @@ export class BoardButtonRowComponent extends EzComponent {
     }
 
     /**
-     * iterates through the array and checks the board states of
+     * @description iterates through the array and checks the board states of
      * each button to see if all of the buttons are off.
      * @returns true or false
      */
@@ -38,7 +38,7 @@ export class BoardButtonRowComponent extends EzComponent {
         return true;
     }
     /**
-     * returns the button at the specified index.
+     * @description returns the button at the specified index.
      * @param index
      * @returns the button at index
      */
