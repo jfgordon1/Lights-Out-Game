@@ -179,7 +179,7 @@ export class GameBoardComponent extends EzComponent {
                         if (i === 0) {
                             this.rows[i + 1].row[z + 1].changeColor();
                         } else if (i === this.rows.length - 1) {
-                            this.rows[i - 1].row[z - 1].changeColor();
+                            this.rows[i - 1].row[z + 1].changeColor();
                         } else {
                             this.rows[i + 1].row[z + 1].changeColor();
                             this.rows[i - 1].row[z + 1].changeColor();
