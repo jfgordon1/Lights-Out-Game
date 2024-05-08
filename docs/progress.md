@@ -8,7 +8,7 @@ Replace the empty whitespace with an `X` (e.g., `- [X]`, but do not include the 
 -   [x] VICTORY
 -   [x] RESIZE
 -   [x] RESET
--   [ ] VARIANTS
+-   [x] VARIANTS
 -   [ ] TESTS
 
 Possible extension requirements (optional):
