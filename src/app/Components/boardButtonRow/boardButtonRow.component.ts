@@ -38,6 +38,17 @@ export class BoardButtonRowComponent extends EzComponent {
         return true;
     }
     /**
+     * Changes the color of the roow
+     * @param id
+     */
+    changeRowColor(id: number) {
+        for (let i = 0; i < this.row.length; i++) {
+            if (!(this.row[i].getId() === id)) {
+                this.row[i].changeColor();
+            }
+        }
+    }
+    /**
      * @description returns the button at the specified index.
      * @param index
      * @returns the button at index
