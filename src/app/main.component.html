@@ -3,18 +3,20 @@
         <div class="title">Lights Out</div>
         <div class="subtitle">by Jacob Gordon</div>
         <div class="subtitle">jfgordon@udel.edu</div>
-        <label for="length">Length: 3</label>
-        <input type="range" min="3", max="10" id="length">
-        <label for="width">10 Width: 3</label> 
-        <input type="range" min="3", max="10" id="width"> 10
-        <select name="Game Modes" id="modes">
-            <option value="Left & Right">Left & Right</option>
-            <option value="Cardinal Directions">Cardinal Directions</option>
-            <option value="Diagonal"> Diagonal Directions</option>
-            <option value="All Other Rows"> All Other Rows</option>
-            <option value="Row & Column"> Rows & Columns</option>
-        </select>
-        <button id="makeBoard">Start Game</button>
-        <div id="gameboard" class="Game Board"></div>
+        <div class="sticky">
+            <label for="length">Length: 3</label>
+            <input type="range" min="3", max="10" id="length">
+            <label for="width">10 Width: 3</label> 
+            <input type="range" min="3", max="10" id="width"> 10
+            <select name="Game Modes" id="modes">
+                <option value="Left & Right">Left & Right</option>
+                <option value="Cardinal Directions">Cardinal Directions</option>
+                <option value="Diagonal"> Diagonal Directions</option>
+                <option value="All Other Rows"> All Other Rows</option>
+                <option value="Row & Column"> Rows & Columns</option>
+            </select>
+            <button id="makeBoard">Start Game</button>
+        </div>
+        <div id="gameboard" class="GameBoard"></div>
     </div>
 </div>

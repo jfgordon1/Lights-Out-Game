@@ -2,10 +2,16 @@
     font-size: 25px;
     color: #000;
     margin-bottom: 20px;
+    position: center;
 }
 
 .subtitle {
     font-size: 20px;
     color: #000;
     margin-bottom: 20px;
+    position: center;
+}
+
+.sticky {
+    position: sticky;
 }
