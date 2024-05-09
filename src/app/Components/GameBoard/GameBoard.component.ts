@@ -7,6 +7,8 @@ import { BoardButtonComponent } from "../boardButton/boardButton.component";
 export class GameBoardComponent extends EzComponent {
     private rows: BoardButtonRowComponent[] = [];
     private board: BoardButtonComponent[][] = [];
+    private width: number = 0;
+    private length: number = 0;
 
     constructor() {
         super(html, css);
@@ -46,12 +48,18 @@ export class GameBoardComponent extends EzComponent {
                 row.clickCheck.subscribe((id: number) => {
                     this.otherRowsCheck(id);
                 });
+            } else if (type === "Row & Column") {
+                row.clickCheck.subscribe((id: number) => {
+                    this.rowColumnCheck(id);
+                });
             }
             row.clickCheck.subscribe(() => {});
             id += width;
             this.addComponent(row);
             this.rows.push(row);
         }
+        this.width = width;
+        this.length = length;
     }
     /**
      * @description Runs through the board to check the board states of all the buttons.
@@ -241,6 +249,33 @@ export class GameBoardComponent extends EzComponent {
                 }
                 this.rows[i].row[z].changeColor();
             }
+        }
+    }
+
+    rowColumnCheck(id: number) {
+        let tempLength = 0;
+        let tempWidth = 0;
+        let widthCount = 0;
+        let lengthCount = 0;
+        for (let i = 0; i < this.rows.length; i++) {
+            for (let z = 0; z < this.rows[i].row.length; z++) {
+                if (this.rows[i].row[z].getId() === id) {
+                    tempLength = i;
+                    tempWidth = z;
+                }
+            }
+        }
+        while (widthCount < this.rows[tempLength].row.length) {
+            if (this.rows[tempLength].row[widthCount].getId() !== id) {
+                this.rows[tempLength].row[widthCount].changeColor();
+            }
+            widthCount++;
+        }
+        while (lengthCount < this.rows.length) {
+            if (this.rows[lengthCount].row[tempWidth].getId() !== id) {
+                this.rows[lengthCount].row[tempWidth].changeColor();
+            }
+            lengthCount++;
         }
     }
 }
