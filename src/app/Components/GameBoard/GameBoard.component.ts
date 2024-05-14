@@ -44,10 +44,6 @@ export class GameBoardComponent extends EzComponent {
                 row.clickCheck.subscribe((id: number) => {
                     this.diagonalCheck(id);
                 });
-            } else if (type === "All Other Rows") {
-                row.clickCheck.subscribe((id: number) => {
-                    this.otherRowsCheck(id);
-                });
             } else if (type === "Row & Column") {
                 row.clickCheck.subscribe((id: number) => {
                     this.rowColumnCheck(id);
@@ -233,21 +229,6 @@ export class GameBoardComponent extends EzComponent {
                         }
                     }
                 }
-            }
-        }
-    }
-    /**
-     * @description method that the board is subscribed to affect the other buttons on click
-     * @click affects the clicked row and column
-     * @param id
-     */
-    otherRowsCheck(id: number) {
-        for (let i = 0; i < this.rows.length; i++) {
-            for (let z = 0; z < this.rows[i].row.length; z++) {
-                if (this.rows[i].row[z].getId() === id) {
-                    this.rows[i].changeRowColor(id);
-                }
-                this.rows[i].row[z].changeColor();
             }
         }
     }
